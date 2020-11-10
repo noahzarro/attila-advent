@@ -1,4 +1,92 @@
-.background{
-    background-image: "url(img/christmas_texture.jpg)";
+.background {
+    background-image: url(img/snowflakes.png);
+    background-repeat: repeat;
+    color: #166370;
 }
 
+.grid-1 {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    display: grid;
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+}
+
+@media only screen and (min-width: 500px) {
+    .grid-1 {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+.grid-1 input {
+    display: none;
+}
+
+.door {
+    /* border */
+    border-style: dashed;
+    border-radius: 25px;
+    border-color: transparent;
+    transition: 0.5s ease border-color;
+    /* size/position */
+    width: 100%;
+    position: relative;
+    /* typography */
+    font-family: 'Kalam', cursive;
+    color: #caa21e;
+    font-size: 2em;
+    font-weight: bold;
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+label {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    display: flex;
+    width: 100%;
+    min-height: 120px;
+    /* background-color: tomato; */
+}
+
+.door:hover {
+    border-color: rgb(23, 112, 139);
+}
+
+.card {
+    transform-style: preserve-3d;
+    transition: all 300ms;
+    width: 100%;
+}
+
+.title {
+    grid-column: 1 / span 3;
+    grid-row: 1 / span 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.back,
+.front {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+}
+
+.card .back {
+    background-color: rgb(23, 112, 139);
+    transform: rotateY(180deg);
+}
+
+:checked+.card {
+    transform: rotateY(180deg);
+}
