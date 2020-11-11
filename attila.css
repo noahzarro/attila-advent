@@ -9,13 +9,13 @@
     padding-bottom: 40px;
     display: grid;
     width: 100%;
-    max-width: 720px;
+    max-width: 960px;
     margin: 0 auto;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
 }
 
-@media only screen and (min-width: 500px) {
+@media only screen and (min-width: 750px) {
     .grid-1 {
         grid-template-columns: repeat(6, 1fr);
     }
