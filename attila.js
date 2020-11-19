@@ -52,7 +52,9 @@ function create_doors() {
 
 window.onload = function() {
     create_doors();
+    /*
     $.getJSON("https://n.ethz.ch/~zarron/attila/doors.json", function(doors) {
         create_doors(doors);
     })
+    */
 };
