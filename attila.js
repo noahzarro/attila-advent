@@ -1,6 +1,6 @@
 let eth_domain = "https://www.eth-lerngruppe.ch/advent/";
 let doors = []
-let month = "November"
+let month = "December"
 
 function door_of_day(day) {
 
