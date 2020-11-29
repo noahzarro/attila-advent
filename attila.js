@@ -1,5 +1,6 @@
 let eth_domain = "https://www.eth-lerngruppe.ch/advent/";
 let doors = []
+let month = "November"
 
 function door_of_day(day) {
 
@@ -16,7 +17,9 @@ function door_of_day(day) {
 
 function on_checked(checkboxElem, day) {
     if (!checkboxElem.checked) {
-        show_modal(door_of_day(day));
+        if (new Date(month + " " + day + ', 2020 0:0:0') < Date.now()) {
+            show_modal(door_of_day(day));
+        }
     }
 }
 
@@ -25,7 +28,7 @@ function create_doors() {
 
         let back = $("<div></div>").addClass("back")
 
-        let date_of_door = new Date('November ' + day + ', 2020 0:0:0');
+        let date_of_door = new Date(month + " " + day + ', 2020 0:0:0');
         if (date_of_door < Date.now()) {
 
             cur_door = door_of_day(day)
